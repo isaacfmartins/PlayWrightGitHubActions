@@ -11,9 +11,9 @@ test('basic test', async () => {
     await page.fill('input[type = "email"]', 'alanvoigt@yahoo.com.br')
     await page.press('input[type = "email"]', 'Tab')
     await page.type('input[type = "password"]', 'test123')
-    await page.click("form >> 'Sign in'")
+    await page.click("button[type='submit']")
 
-    const html = await page.innerHTML('.feed-toggle')
+    const html = await page.innerHTML('.navbar-brand')
 
     // Screenshot
     await page.screenshot({path: 'SignIng.png', fullPage: true})
